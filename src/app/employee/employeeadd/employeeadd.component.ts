@@ -79,75 +79,78 @@ export class EmployeeaddComponent implements OnInit {
 
   addEmp(){
     
-
-    if(this.isEdit){
-      const obj={
-        id: this.editData.id,
-      name: this.empForm.value.name,
-      username: this.empForm.value.username,
-      email: this.empForm.value.email,
-      address: {
-        street: this.empForm.value.street,
-        suite:this.empForm.value.suite,
-        city: this.empForm.value.city,
-        zipcode: this.empForm.value.zipcode,
-        geo: {
-          lat: this.empForm.value.lat,
-          lng: this.empForm.value.lng
+    if(this.empForm.valid){
+      if(this.isEdit){
+        const obj={
+          id: this.editData.id,
+        name: this.empForm.value.name,
+        username: this.empForm.value.username,
+        email: this.empForm.value.email,
+        address: {
+          street: this.empForm.value.street,
+          suite:this.empForm.value.suite,
+          city: this.empForm.value.city,
+          zipcode: this.empForm.value.zipcode,
+          geo: {
+            lat: this.empForm.value.lat,
+            lng: this.empForm.value.lng
+          }
+        },
+        phone: this.empForm.value.phone,
+        website: this.empForm.value.website,
+        company: {
+          name: this.empForm.value.cname,
+          catchPhrase: this.empForm.value.catchPhrase,
+          bs: this.empForm.value.bs
         }
-      },
-      phone: this.empForm.value.phone,
-      website: this.empForm.value.website,
-      company: {
-        name: this.empForm.value.cname,
-        catchPhrase: this.empForm.value.catchPhrase,
-        bs: this.empForm.value.bs
-      }
-      }
-
-      console.log("obj",obj)
-
-      this.Array.forEach((element,index) => {
-        if(element.id == this.editData.id){
-          console.log("push",this.Array[element]);
-         
-          this.Array[index]= obj;
-          console.log("this.Array",this.Array);
         }
-        
-      });
-
+  
+        console.log("obj",obj)
+  
+        this.Array.forEach((element,index) => {
+          if(element.id == this.editData.id){
+            console.log("push",this.Array[element]);
+           
+            this.Array[index]= obj;
+            console.log("this.Array",this.Array);
+          }
+          
+        });
+  
+        console.log("this.Array",this.Array);
+      }else if(this.isAdd){
+        const obj1={
+          id: this.Array.length + 1,
+        name: this.empForm.value.name,
+        username: this.empForm.value.username,
+        email: this.empForm.value.email,
+        address: {
+          street: this.empForm.value.street,
+          suite:this.empForm.value.suite,
+          city: this.empForm.value.city,
+          zipcode: this.empForm.value.zipcode,
+          geo: {
+            lat: this.empForm.value.lat,
+            lng: this.empForm.value.lng
+          }
+        },
+        phone: this.empForm.value.phone,
+        website: this.empForm.value.website,
+        company: {
+          name: this.empForm.value.cname,
+          catchPhrase: this.empForm.value.catchPhrase,
+          bs: this.empForm.value.bs
+        }
+        }
+        this.Array.push(obj1);
+      }
+     
       console.log("this.Array",this.Array);
-    }else if(this.isAdd){
-      const obj1={
-        id: this.Array.length + 1,
-      name: this.empForm.value.name,
-      username: this.empForm.value.username,
-      email: this.empForm.value.email,
-      address: {
-        street: this.empForm.value.street,
-        suite:this.empForm.value.suite,
-        city: this.empForm.value.city,
-        zipcode: this.empForm.value.zipcode,
-        geo: {
-          lat: this.empForm.value.lat,
-          lng: this.empForm.value.lng
-        }
-      },
-      phone: this.empForm.value.phone,
-      website: this.empForm.value.website,
-      company: {
-        name: this.empForm.value.cname,
-        catchPhrase: this.empForm.value.catchPhrase,
-        bs: this.empForm.value.bs
-      }
-      }
-      this.Array.push(obj1);
+      setTimeout(() => {
+        this.closeModel()
+      }, 1000);
     }
-   
-    console.log("this.Array",this.Array);
-    setTimeout(() => {
-      this.closeModel()
-    }, 1000);
+
+    
   }
 }
