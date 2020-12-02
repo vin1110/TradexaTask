@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit, Optional } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { EmployeeService } from 'src/app/employee.service';
 @Component({
   selector: 'app-deleteemployee',
   templateUrl: './deleteemployee.component.html',
@@ -11,7 +12,7 @@ export class DeleteemployeeComponent implements OnInit {
   Array: any;
 
   constructor(public dialogRef: MatDialogRef<DeleteemployeeComponent>,
-    @Optional() @Inject(MAT_DIALOG_DATA) public data: any) { 
+    @Optional() @Inject(MAT_DIALOG_DATA) public data: any,private service:EmployeeService) { 
       this.editData=data.editValue;
       this.isEdit=data.edit;
       this.Array=data.array.filteredData;
@@ -21,6 +22,13 @@ export class DeleteemployeeComponent implements OnInit {
     }
 
   ngOnInit(): void {
+    this.service.subject.subscribe((res: any) => {
+      if (res.status) {
+        this.editData=res.data.editValue;
+      this.isEdit=res.data.edit;
+      this.Array=res.data.array.filteredData;
+      }
+    });
   }
 
   closeModel(){

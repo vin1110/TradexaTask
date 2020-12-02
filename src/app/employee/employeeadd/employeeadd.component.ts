@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit, Optional } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { EmployeeService } from 'src/app/employee.service';
 
 @Component({
   selector: 'app-employeeadd',
@@ -17,7 +18,7 @@ export class EmployeeaddComponent implements OnInit {
   isAdd: boolean =true;
   constructor(private fb:FormBuilder,
     public dialogRef: MatDialogRef<EmployeeaddComponent>,
-    @Optional() @Inject(MAT_DIALOG_DATA) public data: any) {
+    @Optional() @Inject(MAT_DIALOG_DATA) public data: any,private service:EmployeeService) {
       this.editData=data.editValue;
       this.isEdit=data.edit;
       this.Array=data.array.filteredData;
@@ -44,6 +45,13 @@ export class EmployeeaddComponent implements OnInit {
       bs:new FormControl('',[Validators.required]),
     });
   
+    this.service.subject.subscribe((res: any) => {
+      if (res.status) {
+        this.editData=res.data.editValue;
+      this.isEdit=res.data.edit;
+      this.Array=res.data.array.filteredData;
+      }
+    });
     if(this.isEdit){
     this.isAdd=false;
     this.empForm=this.fb.group({

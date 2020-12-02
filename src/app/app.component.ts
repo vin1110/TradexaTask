@@ -5,6 +5,7 @@ import {MatTableDataSource} from '@angular/material/table';
 import { EmployeeaddComponent } from './employee/employeeadd/employeeadd.component';
 
 import { DeleteemployeeComponent } from './employee/deleteemployee/deleteemployee.component';
+import { EmployeeService } from './employee.service';
 export interface PeriodicElement {
   id: number;
   name: string;
@@ -260,10 +261,11 @@ export class AppComponent {
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   Array: any=[];
   isList: boolean;
+  spinner: boolean;
 
   // @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor(public dialog: MatDialog,){
+  constructor(public dialog: MatDialog,private service:EmployeeService){
 
   }
   // ngAfterViewInit() {
@@ -281,7 +283,12 @@ export class AppComponent {
 
   }
   viewList(){
-    this.isList =true;
+    this.spinner=true
+    setTimeout(() => {
+      this.isList =true;
+      this.spinner=false;
+    }, 1500);
+   
   }
 
   editData(element){
@@ -292,7 +299,16 @@ export class AppComponent {
       data:{ editValue: element,edit:true ,array:this.dataSource},
       
     });
- 
+
+    this.service.test({
+      status: true,
+      data: {
+        editValue: element,
+        array:this.dataSource,
+        
+        edit: true,
+      },
+    });
 
     dialogRef.afterClosed().subscribe(result => {
       this.dataSource = new MatTableDataSource<PeriodicElement>(result.data);
@@ -307,6 +323,15 @@ export class AppComponent {
       
     });
  
+    this.service.test({
+      status: true,
+      data: {
+        editValue: '',
+        array:this.dataSource,
+        
+        edit: false,
+      },
+    });
 
     dialogRef.afterClosed().subscribe(result => {
       this.dataSource = new MatTableDataSource<PeriodicElement>(result.data);
@@ -323,7 +348,15 @@ export class AppComponent {
       data:{ editValue: element,edit:false ,array:this.dataSource},
       
     });
- 
+    this.service.test({
+      status: true,
+      data: {
+        editValue: element,
+        array:this.dataSource,
+        
+        edit: false,
+      },
+    });
 
     dialogRef.afterClosed().subscribe(result => {
       this.dataSource = new MatTableDataSource<PeriodicElement>(result.data);
