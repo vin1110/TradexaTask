@@ -1,0 +1,49 @@
+.close{
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+}
+
+button.close {
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.textClass{
+    font-size:1rem;
+    margin-bottom: .5rem; 
+    font-weight: 500; 
+    line-height: 1.2;
+    margin-top: 0;
+    font-family: inherit;
+    color: inherit;
+}
+
+.addbtn {
+    width: 100px;
+    height: 44px;
+    border-radius: 50px;
+    background: #28a745;
+    color: #ffffff;
+    margin-top: 20px;
+    margin-left: 75%;
+    /* margin-right: 60px; */
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.35px;
+    color: #ffffff;
+    border: none;
+    outline: none;
+  }

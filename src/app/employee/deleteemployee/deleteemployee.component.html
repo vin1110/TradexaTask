@@ -1,0 +1,17 @@
+<div class="d-none d-sm-block">
+  <div>
+    <button type="button" class="close" (click)="closeModel()"
+      style="margin-right: 10px;outline: 0;color: black;cursor: pointer;">
+      &times;
+    </button>
+    <div>
+      <span
+        style="font-size:1.75rem;margin-bottom: .5rem; font-weight: 500; line-height: 1.2;margin-top: 0;font-family: inherit;color: inherit;">
+        Are you sure want to delete?</span><br>
+      <div style="display: flex;padding: 4% 0 0 12%;">
+        <button class="addbtn" (click)="closeModel()" style="cursor: pointer;">No</button> &nbsp;
+        <button class="cancelbtn" (click)="deleteData()" style="cursor: pointer;">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
