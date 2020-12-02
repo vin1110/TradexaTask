@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, Inject, OnInit, Optional } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -16,6 +17,7 @@ export class EmployeeaddComponent implements OnInit {
   isEdit: boolean;
   Array: any =[];
   isAdd: boolean =true;
+  error: any;
   constructor(private fb:FormBuilder,
     public dialogRef: MatDialogRef<EmployeeaddComponent>,
     @Optional() @Inject(MAT_DIALOG_DATA) public data: any,private service:EmployeeService) {
@@ -51,6 +53,9 @@ export class EmployeeaddComponent implements OnInit {
       this.isEdit=res.data.edit;
       this.Array=res.data.array.filteredData;
       }
+    }, (error: HttpErrorResponse) => {
+      this.error = error.error.errorMsg;
+    
     });
     if(this.isEdit){
     this.isAdd=false;

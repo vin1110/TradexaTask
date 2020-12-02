@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, Inject, OnInit, Optional } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { EmployeeService } from 'src/app/employee.service';
@@ -10,6 +11,7 @@ export class DeleteemployeeComponent implements OnInit {
   editData: any;
   isEdit: any;
   Array: any;
+  error: any;
 
   constructor(public dialogRef: MatDialogRef<DeleteemployeeComponent>,
     @Optional() @Inject(MAT_DIALOG_DATA) public data: any,private service:EmployeeService) { 
@@ -28,6 +30,9 @@ export class DeleteemployeeComponent implements OnInit {
       this.isEdit=res.data.edit;
       this.Array=res.data.array.filteredData;
       }
+    }, (error: HttpErrorResponse) => {
+      this.error = error.error.errorMsg;
+    
     });
   }
 
