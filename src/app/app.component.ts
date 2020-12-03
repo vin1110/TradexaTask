@@ -36,7 +36,7 @@ var ELEMENT_DATA: PeriodicElement[]  =[
     "phone": "1-770-736-8031 x56442",
     "website": "hildegard.org",
     "company": {
-      "name": "Romaguera-Crona",
+      "cname": "Romaguera-Crona",
       "catchPhrase": "Multi-layered client-server neural-net",
       "bs": "harness real-time e-markets"
     }
@@ -59,7 +59,7 @@ var ELEMENT_DATA: PeriodicElement[]  =[
     "phone": "010-692-6593 x09125",
     "website": "anastasia.net",
     "company": {
-      "name": "Deckow-Crist",
+      "cname": "Deckow-Crist",
       "catchPhrase": "Proactive didactic contingency",
       "bs": "synergize scalable supply-chains"
     }
@@ -82,7 +82,7 @@ var ELEMENT_DATA: PeriodicElement[]  =[
     "phone": "1-463-123-4447",
     "website": "ramiro.info",
     "company": {
-      "name": "Romaguera-Jacobson",
+      "cname": "Romaguera-Jacobson",
       "catchPhrase": "Face to face bifurcated interface",
       "bs": "e-enable strategic applications"
     }
@@ -105,7 +105,7 @@ var ELEMENT_DATA: PeriodicElement[]  =[
     "phone": "493-170-9623 x156",
     "website": "kale.biz",
     "company": {
-      "name": "Robel-Corkery",
+      "cname": "Robel-Corkery",
       "catchPhrase": "Multi-tiered zero tolerance productivity",
       "bs": "transition cutting-edge web services"
     }
@@ -128,7 +128,7 @@ var ELEMENT_DATA: PeriodicElement[]  =[
     "phone": "(254)954-1289",
     "website": "demarco.info",
     "company": {
-      "name": "Keebler LLC",
+      "cname": "Keebler LLC",
       "catchPhrase": "User-centric fault-tolerant solution",
       "bs": "revolutionize end-to-end systems"
     }
@@ -151,7 +151,7 @@ var ELEMENT_DATA: PeriodicElement[]  =[
     "phone": "1-477-935-8478 x6430",
     "website": "ola.org",
     "company": {
-      "name": "Considine-Lockman",
+      "cname": "Considine-Lockman",
       "catchPhrase": "Synchronised bottom-line interface",
       "bs": "e-enable innovative applications"
     }
@@ -174,7 +174,7 @@ var ELEMENT_DATA: PeriodicElement[]  =[
     "phone": "210.067.6132",
     "website": "elvis.io",
     "company": {
-      "name": "Johns Group",
+      "cname": "Johns Group",
       "catchPhrase": "Configurable multimedia task-force",
       "bs": "generate enterprise e-tailers"
     }
@@ -197,7 +197,7 @@ var ELEMENT_DATA: PeriodicElement[]  =[
     "phone": "586.493.6943 x140",
     "website": "jacynthe.com",
     "company": {
-      "name": "Abernathy Group",
+      "cname": "Abernathy Group",
       "catchPhrase": "Implemented secondary concept",
       "bs": "e-enable extensible e-tailers"
     }
@@ -220,7 +220,7 @@ var ELEMENT_DATA: PeriodicElement[]  =[
     "phone": "(775)976-6794 x41206",
     "website": "conrad.com",
     "company": {
-      "name": "Yost and Sons",
+      "cname": "Yost and Sons",
       "catchPhrase": "Switchable contextually-based project",
       "bs": "aggregate real-time technologies"
     }
@@ -243,7 +243,7 @@ var ELEMENT_DATA: PeriodicElement[]  =[
     "phone": "024-648-3804",
     "website": "ambrose.net",
     "company": {
-      "name": "Hoeger LLC",
+      "cname": "Hoeger LLC",
       "catchPhrase": "Centralized empowering task-force",
       "bs": "target end-to-end models"
     }

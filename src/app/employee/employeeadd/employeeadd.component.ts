@@ -71,7 +71,7 @@ export class EmployeeaddComponent implements OnInit {
       lng:this.editData.address.geo.lng,
       phone:this.editData.phone,
       website:this.editData.website,
-      cname:this.editData.company.name,
+      cname:this.editData.company.cname,
       catchPhrase:this.editData.company.catchPhrase,
       bs:this.editData.company.bs,
     });
@@ -104,7 +104,7 @@ export class EmployeeaddComponent implements OnInit {
         phone: this.empForm.value.phone,
         website: this.empForm.value.website,
         company: {
-          name: this.empForm.value.cname,
+          cname: this.empForm.value.cname,
           catchPhrase: this.empForm.value.catchPhrase,
           bs: this.empForm.value.bs
         }
@@ -142,7 +142,7 @@ export class EmployeeaddComponent implements OnInit {
         phone: this.empForm.value.phone,
         website: this.empForm.value.website,
         company: {
-          name: this.empForm.value.cname,
+          cname: this.empForm.value.cname,
           catchPhrase: this.empForm.value.catchPhrase,
           bs: this.empForm.value.bs
         }
